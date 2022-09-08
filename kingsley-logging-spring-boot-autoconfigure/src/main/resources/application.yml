@@ -1,0 +1,3 @@
+kingsley:
+  logging:
+    console-pattern: "%magenta(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %colorfulConverter(%-5level) %boldYellow(${PID:-}) %red([%-8.8X{traceId}]) %clr(%-30.30(%logger{30})){cyan} %clr(:) %msg %n"

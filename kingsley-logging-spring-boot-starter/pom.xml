@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>kingsley-spring-boot-parent</artifactId>
+        <groupId>com.kingsley.spring.boot</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.kingsley.springboot</groupId>
+    <artifactId>kingsley-logging-spring-boot-starter</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.kingsley.spring.boot</groupId>
+            <artifactId>kingsley-logging-spring-boot-autoconfigure</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <uniqueVersion>false</uniqueVersion>
+            <!-- 要和settings.xml里面的server的id一致，因为需要身份认证  -->
+            <id>maven-server</id>
+            <!-- name节点无实际意义 -->
+            <name>Release Repository</name>
+            <!-- 不能写public 只能releases -->
+            <url>http://maven.kingsley.com:8081/nexus/content/repositories/release/</url>
+            <layout>default</layout>
+        </repository>
+        <snapshotRepository>
+            <id>maven-server</id>
+            <name>for snapshot upload</name>
+            <url>http://maven.kingsley.com:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>

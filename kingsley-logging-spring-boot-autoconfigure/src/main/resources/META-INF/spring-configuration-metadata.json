@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "kingsley.logging",
+      "type": "com.kingsley.logging.boot.autoconfigure.properties.LoggingProperties",
+      "sourceType": "com.kingsley.logging.boot.autoconfigure.properties.LoggingProperties"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
